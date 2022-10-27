@@ -11,7 +11,7 @@ output "x" {
 }
 
 output "values" {
-  value = "Values of a=${var.a}, b=${var.b}, c=${var.c}, d=${var.d}"
+  value = "Values, a=${var.a}, b=${var.b}, c=${var.c}, d=${var.d}"
 }
 
 variable "b" {}

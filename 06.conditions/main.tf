@@ -20,7 +20,7 @@ locals {
 data "aws_ami" "example" {
   executable_users = ["self"]
   most_recent      = true
-  name_regex       = ansible-inbuilt
+  name_regex       = "ansible-inbuilt"
   owners           = ["self"]
 }
 

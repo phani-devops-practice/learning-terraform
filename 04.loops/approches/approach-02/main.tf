@@ -4,5 +4,5 @@ variable "name_tag" {
 
 module "ec2" {
   source = "./module"
-  name_tag = "terraform"
+  name_tag = "terraform-${count.index+1}"
 }

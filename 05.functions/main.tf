@@ -24,6 +24,6 @@ variable "map" {
   }
 }
 
-output "list_map" {
+output "length_map" {
   value = length(var.map)
 }

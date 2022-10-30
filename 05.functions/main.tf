@@ -14,3 +14,16 @@ variable "list" {
 output "list_length" {
   value = length(var.list)
 }
+
+variable "map" {
+  default = {
+    a = 1
+    b = 2
+    c = 3
+    d = 4
+  }
+}
+
+output "list_map" {
+  value = length(var.list)
+}

@@ -25,5 +25,5 @@ variable "map" {
 }
 
 output "list_map" {
-  value = length(var.list)
+  value = length(var.map)
 }

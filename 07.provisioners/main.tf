@@ -10,20 +10,21 @@ resource "aws_instance" "web" {
   tags = {
     Name = "terraform"
   }
+  
+  connection {
+    type     = "ssh"
+    user     = "root"
+    password = "DevOps321"
+    host     = self.public_ip
+  }
 
   provisioner "remote-exec" {
-    connection {
-      type     = "ssh"
-      user     = "root"
-      password = "DevOps321"
-      host     = self.public_ip
-    }
-
     inline = [
       "uname"
     ]
   }
 }
+
 
 resource "aws_security_group" "allow_ssh" {
   name        = "allow_ssh"

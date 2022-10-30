@@ -1,7 +1,7 @@
 #conditions is all about picking up the value form the arguments
 
 resource "aws_instance" "web" {
-  ami                    = data.aws_ami.example.image_id
+  ami                    = data.aws_ami.sample.image_id
   instance_type          = local.instance_type
 
   tags = {
@@ -17,7 +17,7 @@ locals {
   instance_type = var.instance_type == null ? "t3.micro" : var.instance_type
 }
 
-data "aws_ami" "example" {
+data "aws_ami" "sample" {
   executable_users = ["self"]
   most_recent      = true
   name_regex       = "ansible-inbuilt"

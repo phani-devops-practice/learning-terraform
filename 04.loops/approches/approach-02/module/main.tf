@@ -4,6 +4,8 @@ resource "aws_instance" "web" {
   instance_type          = "t3.micro"
 
   tags = {
-    Name = "terraform-${count.index+1}"
+    Name = var.name_tag
   }
 }
+
+variable "name_tag" {}

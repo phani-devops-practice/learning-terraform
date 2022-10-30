@@ -11,14 +11,35 @@ resource "aws_instance" "web" {
     Name = "terraform"
   }
   
-  connection {
-    type     = "ssh"
-    user     = "root"
-    password = "DevOps321"
-    host     = self.public_ip
-  }
+#  connection {
+#    type     = "ssh"
+#    user     = "root"
+#    password = "DevOps321"
+#    host     = self.public_ip
+#  }
+#
+#  provisioner "remote-exec" {
+#    inline = [
+#      "uname"
+#    ]
+#  }
+}
 
+
+resource "null_resource" "null" {
+
+  triggers = {
+    a = timestamp()
+  }
+        
   provisioner "remote-exec" {
+    connection {
+      type     = "ssh"
+      user     = "root"
+      password = "DevOps321"
+      host     = aws_instance.web.public_ip
+    }
+    
     inline = [
       "uname"
     ]
